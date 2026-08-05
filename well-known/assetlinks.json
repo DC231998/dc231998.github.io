@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.netlify.mifinanzap.twa",
+    "sha256_cert_fingerprints": ["63:59:BA:1F:F6:57:E0:A7:27:D0:39:8E:18:70:F3:FF:60:F6:91:31:9C:A6:52:B7:D0:E3:81:CB:C1:A1:03:69"]
+  }
+}]
