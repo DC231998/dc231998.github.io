@@ -1,0 +1,20 @@
+# Configuración de Netlify para "Mis Finanzas Personales".
+# Este archivo va en la MISMA carpeta que index.html, manifest.json, etc.
+
+[[headers]]
+  # El service worker nunca debe quedar cacheado por el navegador/CDN de Netlify —
+  # si no, cuando subas una actualización de la app, los usuarios pueden quedarse
+  # atorados con la versión vieja porque el navegador nunca vuelve a pedir el archivo
+  # que le avisa que hay una versión nueva.
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  # El archivo de verificación para el TWA (Trusted Web Activity) de Android debe
+  # servirse como JSON con acceso público, o Android no podrá confirmar que la app
+  # y el sitio web son del mismo dueño.
+  for = "/.well-known/assetlinks.json"
+  [headers.values]
+    Content-Type = "application/json"
+    Access-Control-Allow-Origin = "*"
